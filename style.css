@@ -1,0 +1,450 @@
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(#8B4513, #ff6f61, #b0b0b0, #ccc);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+} */
+
+.cake-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cake {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.candle-body {
+    background-color: #ff6f61;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.wick {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 2px;
+    height: 10px;
+    background-color: #000;
+    transform: translateX(-50%);
+}
+
+.flame-container {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 20px;
+    height: 30px;
+    transform: translateX(-50%);
+}
+
+.flame, .inner-flame, .outer-flame {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border-radius: 50% 50% 0 0;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.flame {
+    width: 10px;
+    height: 20px;
+    background-color: orange;
+    animation: flame 1s infinite;
+}
+
+.inner-flame {
+    width: 6px;
+    height: 12px;
+    background-color: yellow;
+    animation: inner-flame 1s infinite;
+}
+
+.outer-flame {
+    width: 14px;
+    height: 28px;
+    background-color: rgba(255, 140, 0, 0.5);
+    animation: outer-flame 1s infinite;
+}
+
+@keyframes flame {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-2px); }
+}
+
+@keyframes inner-flame {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-1px); }
+}
+
+@keyframes outer-flame {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-3px); }
+}
+
+button {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 300px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@keyframes smoke {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-50px) rotate(360deg) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(720deg) scale(1.4);
+        opacity: 0;
+    }
+}
+
+.smoke-1, .smoke-2, .smoke-3, .smoke-4, .smoke-5 {
+    opacity: 0;
+}
+
+.smoke-1 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.smoke-2 {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background-color: white;
+    border-radius: 60%;
+    left: 15px;
+    z-index: 2;
+}
+
+.smoke-3 {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #b0b0b0;
+    border-radius: 70%;
+    right: 20px;
+    z-index: 3;
+}
+
+.smoke-4 {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: #b1b1b1;
+    left: 20px;
+    border-radius: 80%;
+    z-index: 4;
+}
+
+.smoke-5 {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #ccc;
+    border-radius: 90%;
+    right: 15px;
+    z-index: 5;
+}
+
+#lightCandle {
+    margin-top: 20px;
+}
+
+#textContainer {
+    position: absolute;
+    top: -200px;
+    right: 125px;
+    /* transform: translate(90%, 0%); */
+
+}
+
+.floating-text {
+    font-size: 12px;
+    animation: floatText 2s infinite;
+    opacity: 10;
+}
+
+@keyframes floatText {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-50px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+/* Rest of your existing CSS styles */
+
+.altar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.table {
+    width: 300px;
+    height: 150px;
+    background-color: #8B4513;
+    position: relative;
+    border-radius: 10px;
+}
+
+@keyframes smoke {
+    0% { opacity: 0; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-10px); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.offering {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.offering-item {
+    width: 60px;
+    height: 60px;
+}
+
+.offering-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.sticky-rice {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.candle2 {
+    position: relative;
+    width: 2px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.candle2 .candle-body {
+    background-color: #ff6f61;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.candle2 .wick {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 2px;
+    height: 10px;
+    background-color: #000;
+    transform: translateX(-50%);
+}
+
+.candle2 .flame-container {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 20px;
+    height: 30px;
+    transform: translateX(-50%);
+}
+
+.candle2 .flame, .candle2 .inner-flame, .candle2 .outer-flame {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border-radius: 50% 50% 0 0;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.candle2 .flame {
+    width: 10px;
+    height: 20px;
+    background-color: orange;
+    animation: flame 1s infinite;
+}
+
+.candle2 .inner-flame {
+    width: 6px;
+    height: 12px;
+    background-color: yellow;
+    animation: inner-flame 1s infinite;
+}
+
+.candle2 .outer-flame {
+    width: 14px;
+    height: 28px;
+    background-color: rgba(255, 140, 0, 0.5);
+    animation: outer-flame 1s infinite;
+}
+
+.candle3 {
+    position: relative;
+    width: 2px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.candle3 .candle-body {
+    background-color: #ff6f61;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.candle3 .wick {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 2px;
+    height: 10px;
+    background-color: #000;
+    transform: translateX(-50%);
+}
+
+.candle3 .flame-container {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 20px;
+    height: 30px;
+    transform: translateX(-50%);
+}
+
+.candle3 .flame, .candle3 .inner-flame, .candle3 .outer-flame {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border-radius: 50% 50% 0 0;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.candle3 .flame {
+    width: 10px;
+    height: 20px;
+    background-color: orange;
+    animation: flame 1s infinite;
+}
+
+.candle3 .inner-flame {
+    width: 6px;
+    height: 12px;
+    background-color: yellow;
+    animation: inner-flame 1s infinite;
+}
+
+.candle3 .outer-flame {
+    width: 14px;
+    height: 28px;
+    background-color: rgba(255, 140, 0, 0.5);
+    animation: outer-flame 1s infinite;
+}
+
+
+.candle,
+.candle2,
+.candle3 {
+    position: relative;
+    width: 2px;
+    height: 45px;
+    margin: 0 auto;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.incense-bowl {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    z-index: 1;
+    bottom: 49.5%;
+    top: 68%;
+    right: 50%;
+    left: 49.5%;
+    transform: translate(-50%, -50%);
+    background-image: url('incense-bowl.png'); 
+    background-size: cover; 
+    background-position: center; 
+}
+
+.hammer {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: url('hammer.png');
+    background-size: cover;
+    z-index: 1;
+    bottom: 50%;
+    top: 65%;
+    right: 50%;
+    left: 50%;  
+    transform: translate(-200%, -50%);
+    background-position: center;
+}
+
+.text-effect {
+    position: absolute;
+    font-size: 12px; 
+    font-weight: bold;
+    font-family: Arial, sans-serif; 
+    color: black; 
+    pointer-events: fill; 
+    /* left: 150px; */
+    margin-bottom: 50px;
+    z-index: 1000;
+    transform: translate(-200%, 0%);
+}
